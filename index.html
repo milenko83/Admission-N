@@ -30,14 +30,11 @@ header::before,header::after{content:"";position:absolute;border-radius:50%;opac
 header::before{width:260px;height:260px;background:var(--honey);top:-110px;right:-70px;opacity:.35}
 header::after{width:160px;height:160px;background:var(--peach);bottom:-80px;right:120px;opacity:.25}
 .wrap{max-width:820px;margin:auto;position:relative;z-index:2}
-
-/* NAVIGATION - matches stories page */
 .navrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:35px;flex-wrap:wrap}
 .logo{font-weight:800;letter-spacing:2px;font-size:14px;color:var(--honey)}
 .navlinks{display:flex;gap:8px}
 .navlinks a{color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.35)}
 .navlinks a.current{background:var(--honey);border-color:var(--honey);color:var(--forest-dark)}
-
 h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:42px;line-height:1.08;margin:0 0 12px;letter-spacing:-.5px}
 header p{max-width:620px;font-size:18px;opacity:.92}
 .progress{height:5px;background:#e3d9c2}
@@ -72,21 +69,39 @@ a{color:var(--forest-dark)}
 .btn{padding:12px 16px;border:1px solid var(--line);border-radius:30px;text-decoration:none;background:var(--paper)}
 .btn:hover{border-color:var(--clay)}
 footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:13px}
-@media(max-width:650px){h1{font-size:34px}.options,.summary{grid-template-columns:1fr}.days{grid-template-columns:repeat(5,1fr)}.panel{padding:21px}}
+
+/* sticky video dock — stays visible while answering questions */
+body{padding-bottom:250px}
+.video-dock{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--forest-dark);border-top:1px solid rgba(255,255,255,.12);box-shadow:0 -10px 26px rgba(44,70,53,.25)}
+.video-dock-bar{max-width:820px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 20px}
+.video-dock-label{color:#fff;font-weight:700;font-size:13px;letter-spacing:.3px;white-space:nowrap;flex:none}
+.video-dock-label span{display:block;font-weight:400;color:var(--sage);font-size:12px;margin-top:2px}
+.video-dock-frame{flex:1;max-width:320px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.video-dock-frame iframe{width:100%;height:100%;display:block;border:0}
+.video-dock-toggle{flex:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:30px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',Arial,sans-serif}
+.video-dock.collapsed .video-dock-frame{display:none}
+.video-dock.collapsed .video-dock-bar{padding:10px 20px}
+
+@media(max-width:650px){
+ h1{font-size:34px}.options,.summary{grid-template-columns:1fr}.days{grid-template-columns:repeat(5,1fr)}.panel{padding:21px}
+ body{padding-bottom:210px}
+ .video-dock-bar{flex-wrap:wrap}
+ .video-dock-frame{max-width:100%;flex-basis:100%}
+}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <div class="navrow">
-    <div class="logo">N FAMILY CLUB</div>
-    <div class="navlinks">
-      <a href="index.html" class="current">Family Guide</a>
-      <a href="stories.html">Stories for Parents</a>
-    </div>
+<div class="navrow">
+  <div class="logo">N FAMILY CLUB</div>
+  <div class="navlinks">
+    <a href="index.html" class="current">Family Guide</a>
+    <a href="stories.html">Stories for Parents</a>
   </div>
-  <div>London Fields</div>
-  <h1>Find the right nursery arrangement.</h1>
-  <p>Answer a few questions and get a simple explanation of the closest London Fields booking option.</p>
+</div>
+<div>London Fields</div>
+<h1>Find the right nursery arrangement.</h1>
+<p>Answer a few questions and get a simple explanation of the closest London Fields booking option.</p>
 </div></header>
 <div class="progress"><div id="bar" class="bar"></div></div>
 
@@ -156,6 +171,27 @@ footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:13px}
 
 </div></main>
 <footer>Family guide based on the London Fields information supplied for this prototype. Fees, availability and policies can change; confirm current details with N Family Club.</footer>
+
+<div class="video-dock" id="videoDock">
+  <div class="video-dock-bar">
+    <div class="video-dock-label">Watch<span>A short intro to N</span></div>
+    <div class="video-dock-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/PgP10KjBH2A" title="N Family Club video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <button class="video-dock-toggle" onclick="toggleVideoDock()" id="videoDockToggle">Hide</button>
+  </div>
+</div>
+
+<script>
+function toggleVideoDock(){
+ const dock=document.getElementById('videoDock');
+ const btn=document.getElementById('videoDockToggle');
+ dock.classList.toggle('collapsed');
+ const collapsed=dock.classList.contains('collapsed');
+ btn.textContent=collapsed?'Show':'Hide';
+ document.body.style.paddingBottom=collapsed?'70px':(window.innerWidth<=650?'210px':'250px');
+}
+</script>
 
 <script>
 let age=null,days=null,fund=null,picked=[];
@@ -235,9 +271,9 @@ function result(){
 
  let details='';
  if(fund==='15'){
-   details='<p><strong>Funding is stretched:</strong> 15 funded hours become 11.18 hours per week across N\'s 51-week year.</p><p>London Fields publishes additional funded-day charges of £11.70 food, £3.00 non-food consumables and £30.00 activities where applicable; these are already reflected in the published funded fee.</p>';
+   details='<p><strong>Funding is stretched:</strong> 15 funded hours become 11.18 hours per week across N’s 51-week year.</p><p>London Fields publishes additional funded-day charges of £11.70 food, £3.00 non-food consumables and £30.00 activities where applicable; these are already reflected in the published funded fee.</p>';
  } else if(fund==='30'){
-   details='<p><strong>Funding is stretched:</strong> 30 funded hours become 22.35 hours per week across N\'s 51-week year.</p><p>London Fields publishes additional funded-day charges of £11.70 food, £3.00 non-food consumables and £30.00 activities where applicable; these are already reflected in the published funded fee.</p>';
+   details='<p><strong>Funding is stretched:</strong> 30 funded hours become 22.35 hours per week across N’s 51-week year.</p><p>London Fields publishes additional funded-day charges of £11.70 food, £3.00 non-food consumables and £30.00 activities where applicable; these are already reflected in the published funded fee.</p>';
  } else {
    details='<p>Standard fees already include food, drinks, consumables and activities.</p>';
  }
