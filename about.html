@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>N Family Club — About Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf5e9;
+  --paper:#fffdf8;
+  --sand:#f1e4cb;
+  --line:#e9dcc4;
+  --forest:#3a5a45;
+  --forest-dark:#2c4635;
+  --clay:#c96f4a;
+  --clay-dark:#b25f3c;
+  --honey:#e3a75c;
+  --peach:#f3c9ad;
+  --sage:#c9d9c3;
+  --ink:#3a342c;
+  --muted:#8a7f6f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'Nunito',Arial,sans-serif}
+
+/* NAV — mirrors index.html / stories.html header treatment */
+header{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--forest) 0%,var(--forest-dark) 100%);color:#fff;padding:34px 20px 55px}
+header::before,header::after{content:"";position:absolute;border-radius:50%;opacity:.55;pointer-events:none}
+header::before{width:260px;height:260px;background:var(--honey);top:-110px;right:-70px;opacity:.35}
+header::after{width:160px;height:160px;background:var(--peach);bottom:-80px;right:120px;opacity:.25}
+.wrap{max-width:820px;margin:auto;position:relative;z-index:2}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:35px;flex-wrap:wrap}
+.logo{font-weight:800;letter-spacing:2px;font-size:14px;color:var(--honey)}
+.navlinks{display:flex;gap:8px}
+.navlinks a{color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.35)}
+.navlinks a.current{background:var(--honey);border-color:var(--honey);color:var(--forest-dark)}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:42px;line-height:1.08;margin:0 0 12px;letter-spacing:-.5px}
+header p{max-width:620px;font-size:18px;opacity:.92}
+
+/* MAIN CONTENT */
+main{margin-top:-25px;padding-bottom:70px}
+.panel{background:var(--paper);border-radius:24px;padding:34px;box-shadow:0 12px 34px rgba(58,74,60,.10);border:1px solid var(--line)}
+.eyebrow{font-weight:800;letter-spacing:2px;font-size:12px;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;margin:0 0 18px;color:var(--forest-dark)}
+p{margin:0 0 16px}
+
+/* video */
+.about-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;margin:26px 0}
+.about-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* full-width stacked image placeholders */
+.about-images{display:flex;flex-direction:column;gap:16px;margin-top:26px}
+.about-image{width:100%;aspect-ratio:16/9;border-radius:18px;background:var(--sand);border:2px dashed var(--line);position:relative;overflow:hidden;margin:0;display:flex;align-items:center;justify-content:center}
+.about-image img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
+.about-image .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;color:var(--muted);font-size:13px}
+.about-image .placeholder strong{color:var(--forest-dark);font-family:'Fraunces',Georgia,serif;font-size:17px;font-weight:600}
+
+footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:13px}
+@media(max-width:650px){h1{font-size:34px}.panel{padding:22px}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="navrow">
+    <div class="logo">N FAMILY CLUB</div>
+    <div class="navlinks">
+      <a href="index.html">Family Guide</a>
+      <a href="stories.html">Stories for Parents</a>
+      <a href="about.html" class="current">About Me</a>
+    </div>
+  </div>
+  <h1>Why I care about how kids actually learn.</h1>
+  <p>A little about my background, and the work that shaped how I think about learning.</p>
+</div></header>
+
+<main class="wrap">
+
+<section class="panel">
+  <div class="eyebrow">About Me</div>
+  <h2>Why I care about how kids actually learn</h2>
+
+  <p>For more than six years, I was part of SKM — a program built on a simple but stubborn idea: that kids, especially kids the system tends to overlook, are capable of real scientific thinking if you meet them where they are instead of just handing them facts to memorize. I served as an educator and mentor to students in the Space-medicine Summer Academy (SSA), working alongside underprivileged middle schoolers as they took their first steps into serious STEM environments — from after-school labs to hospital floors at Walter Reed.</p>
+
+  <p>What draws me to this kind of work is a deeper fascination with how people actually learn — not the version of learning that fits neatly into a test score, but the messier, more human process of a kid going from confused to curious to confident. Watching that shift happen, especially in students who'd been told in a hundred small ways that science "wasn't for them," is part of what shaped my thinking about learning systems more broadly.</p>
+
+  <p>My role wasn't just to explain science — it was to translate it. I took dense, technical concepts and found the plain-language version that let a twelve-year-old actually grasp what a cancer cell was doing, or why the scientific method mattered, without losing the substance in the process. But just as often, my job wasn't about the science at all. It was about standing in the gap between two worlds these kids were straddling — the abstract, orderly world of scientific inquiry, and the very real, very unpredictable world they went home to every day. Being present for that tension, and helping them hold both without having to choose, is some of the work I'm proudest of.</p>
+
+  <div class="about-video">
+    <iframe src="https://www.youtube-nocookie.com/embed/SOQmRNqEE3Y" title="About Me video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+  <div class="about-images">
+    <figure class="about-image">
+      <img src="assets/images/image11.jpg" alt="image11" onerror="this.style.display='none'">
+      <div class="placeholder"><strong>image11</strong>assets/images/image11.jpg</div>
+    </figure>
+    <figure class="about-image">
+      <img src="assets/images/image12.jpg" alt="image12" onerror="this.style.display='none'">
+      <div class="placeholder"><strong>image12</strong>assets/images/image12.jpg</div>
+    </figure>
+    <figure class="about-image">
+      <img src="assets/images/image13.jpg" alt="image13" onerror="this.style.display='none'">
+      <div class="placeholder"><strong>image13</strong>assets/images/image13.jpg</div>
+    </figure>
+    <figure class="about-image">
+      <img src="assets/images/image14.jpg" alt="image14" onerror="this.style.display='none'">
+      <div class="placeholder"><strong>image14</strong>assets/images/image14.jpg</div>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer>N Family Club — About Me.</footer>
+
+</body></html>
