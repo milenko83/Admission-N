@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>N Family Club — Stories for Parents</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --cream:#fbf5e9;
@@ -23,198 +25,721 @@
   --ink:#3a342c;
   --muted:#8a7f6f;
 }
-*{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 'Nunito',Arial,sans-serif}
 
-/* NAV — mirrors index.html header treatment */
-header{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--forest) 0%,var(--forest-dark) 100%);color:#fff;padding:34px 20px 55px}
-header::before,header::after{content:"";position:absolute;border-radius:50%;opacity:.55;pointer-events:none}
-header::before{width:260px;height:260px;background:var(--honey);top:-110px;right:-70px;opacity:.35}
-header::after{width:160px;height:160px;background:var(--peach);bottom:-80px;right:120px;opacity:.25}
-.wrap{max-width:820px;margin:auto;position:relative;z-index:2}
-.navrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:35px;flex-wrap:wrap}
-.logo{font-weight:800;letter-spacing:2px;font-size:14px;color:var(--honey)}
-.navlinks{display:flex;gap:8px}
-.navlinks a{color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:30px;border:1px solid rgba(255,255,255,.35)}
-.navlinks a.current{background:var(--honey);border-color:var(--honey);color:var(--forest-dark)}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:42px;line-height:1.08;margin:0 0 12px;letter-spacing:-.5px}
-header p{max-width:620px;font-size:18px;opacity:.92}
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font:16px/1.6 'Nunito',Arial,sans-serif
+}
+
+/* NAV */
+
+header{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(
+    160deg,
+    var(--forest) 0%,
+    var(--forest-dark) 100%
+  );
+  color:#fff;
+  padding:34px 20px 55px
+}
+
+header::before,
+header::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  opacity:.55;
+  pointer-events:none
+}
+
+header::before{
+  width:260px;
+  height:260px;
+  background:var(--honey);
+  top:-110px;
+  right:-70px;
+  opacity:.35
+}
+
+header::after{
+  width:160px;
+  height:160px;
+  background:var(--peach);
+  bottom:-80px;
+  right:120px;
+  opacity:.25
+}
+
+.wrap{
+  max-width:820px;
+  margin:auto;
+  position:relative;
+  z-index:2
+}
+
+.navrow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:35px;
+  flex-wrap:wrap
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:2px;
+  font-size:14px;
+  color:var(--honey)
+}
+
+.navlinks{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+
+.navlinks a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:13px;
+  padding:9px 16px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,.35);
+  transition:.2s
+}
+
+.navlinks a:hover{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.6)
+}
+
+.navlinks a.current{
+  background:var(--honey);
+  border-color:var(--honey);
+  color:var(--forest-dark)
+}
+
+h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  font-size:42px;
+  line-height:1.08;
+  margin:0 0 12px;
+  letter-spacing:-.5px
+}
+
+header p{
+  max-width:620px;
+  font-size:18px;
+  opacity:.92
+}
 
 /* MAIN CONTENT */
-main{margin-top:-25px;padding-bottom:70px}
-.panel{background:var(--paper);border-radius:24px;padding:34px;box-shadow:0 12px 34px rgba(58,74,60,.10);border:1px solid var(--line);margin-bottom:22px}
-.eyebrow{font-weight:800;letter-spacing:2px;font-size:12px;text-transform:uppercase;color:var(--clay);margin-bottom:10px}
-h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;margin:0 0 6px;color:var(--forest-dark)}
-h3{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:22px;margin:0 0 4px;color:var(--forest-dark)}
-.for-parent{font-style:italic;color:var(--muted);font-size:17px;margin:0 0 22px}
-p{margin:0 0 16px}
-.pull{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:20px;color:var(--forest-dark);background:var(--sand);border-radius:16px;padding:20px 24px;margin:22px 0}
-.value{background:var(--sage);border-radius:16px;padding:18px 22px;margin-top:20px}
-.value strong{display:block;font-family:'Fraunces',Georgia,serif;font-size:16px;color:var(--forest-dark);margin-bottom:4px}
 
-/* IMAGE SLOTS ------------------------------------------------
-   4 slots total: one after each of the 3 stories, and a 4th
-   "unified" image in the closing section. Each slot is a plain
-   <img> pointed at /assets/images/... — drop a file at that
-   exact path in the repo and it will appear automatically.
-   The dashed placeholder only shows while no image is present. */
-.story-photo{position:relative;border-radius:18px;overflow:hidden;margin-top:22px;aspect-ratio:16/9;background:var(--sand);border:2px dashed var(--line);display:flex;align-items:center;justify-content:center}
-.story-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.story-photo .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:20px;color:var(--muted);font-size:13px}
-.story-photo .placeholder strong{color:var(--forest-dark);font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:600}
+main{
+  margin-top:-25px;
+  padding-bottom:70px
+}
 
-.unified{background:linear-gradient(160deg,var(--forest) 0%,var(--forest-dark) 100%);color:#fff;border-radius:24px;padding:36px}
-.unified h2{color:#fff}
-.unified p{color:#e7ede9}
-.unified .story-photo{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35)}
-.unified .story-photo .placeholder{color:#e7ede9}
-.unified .story-photo .placeholder strong{color:#fff}
+.panel{
+  background:var(--paper);
+  border-radius:24px;
+  padding:34px;
+  box-shadow:0 12px 34px rgba(58,74,60,.10);
+  border:1px solid var(--line);
+  margin-bottom:22px
+}
 
-footer{text-align:center;color:var(--muted);padding:30px 20px;font-size:13px}
-@media(max-width:650px){h1{font-size:34px}.panel{padding:22px}.unified{padding:24px}}
+.eyebrow{
+  font-weight:800;
+  letter-spacing:2px;
+  font-size:12px;
+  text-transform:uppercase;
+  color:var(--clay);
+  margin-bottom:10px
+}
+
+h2{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  font-size:30px;
+  margin:0 0 6px;
+  color:var(--forest-dark)
+}
+
+h3{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  font-size:22px;
+  margin:0 0 4px;
+  color:var(--forest-dark)
+}
+
+.for-parent{
+  font-style:italic;
+  color:var(--muted);
+  font-size:17px;
+  margin:0 0 22px
+}
+
+p{
+  margin:0 0 16px
+}
+
+.pull{
+  font-family:'Fraunces',Georgia,serif;
+  font-style:italic;
+  font-size:20px;
+  color:var(--forest-dark);
+  background:var(--sand);
+  border-radius:16px;
+  padding:20px 24px;
+  margin:22px 0
+}
+
+.value{
+  background:var(--sage);
+  border-radius:16px;
+  padding:18px 22px;
+  margin-top:20px
+}
+
+.value strong{
+  display:block;
+  font-family:'Fraunces',Georgia,serif;
+  font-size:16px;
+  color:var(--forest-dark);
+  margin-bottom:4px
+}
+
+/* STORY IMAGES */
+
+.story-photo{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  margin-top:22px;
+  aspect-ratio:16/9;
+  background:var(--sand);
+  border:2px dashed var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.story-photo > img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block
+}
+
+.story-photo .placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:6px;
+  padding:20px;
+  color:var(--muted);
+  font-size:13px
+}
+
+.story-photo .placeholder strong{
+  color:var(--forest-dark);
+  font-family:'Fraunces',Georgia,serif;
+  font-size:16px;
+  font-weight:600
+}
+
+/* FINAL UNIFIED SECTION */
+
+.unified{
+  background:linear-gradient(
+    160deg,
+    var(--forest) 0%,
+    var(--forest-dark) 100%
+  );
+  color:#fff;
+  border-radius:24px;
+  padding:36px
+}
+
+.unified h2{
+  color:#fff
+}
+
+.unified p{
+  color:#e7ede9
+}
+
+.unified .story-photo{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.35)
+}
+
+.unified .story-photo .placeholder{
+  color:#e7ede9
+}
+
+.unified .story-photo .placeholder strong{
+  color:#fff
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:30px 20px;
+  font-size:13px
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+  h1{
+    font-size:34px
+  }
+
+  .panel{
+    padding:22px
+  }
+
+  .unified{
+    padding:24px
+  }
+
+  .navrow{
+    align-items:flex-start
+  }
+
+  .navlinks{
+    width:100%;
+    gap:6px
+  }
+
+  .navlinks a{
+    font-size:12px;
+    padding:8px 12px
+  }
+}
 </style>
 </head>
+
 <body>
 
-<header><div class="wrap">
-  <div class="navrow">
-    <div class="logo">N FAMILY CLUB</div>
-    <div class="navlinks">
-      <a href="index.html">Family Guide</a>
-      <a href="stories.html" class="current">Stories for Parents</a>
+<header>
+
+  <div class="wrap">
+
+    <div class="navrow">
+
+      <div class="logo">
+        N FAMILY CLUB
+      </div>
+
+      <div class="navlinks">
+
+        <a href="index.html">
+          Family Guide
+        </a>
+
+        <a href="stories.html" class="current">
+          Stories for Parents
+        </a>
+
+        <a href="about.html">
+          About Me
+        </a>
+
+      </div>
+
     </div>
+
+    <h1>
+      Three ideas that shape how N cares for your child.
+    </h1>
+
+    <p>
+      A short read on the thinking behind the room — and what it means
+      for you as a parent.
+    </p>
+
   </div>
-  <h1>Three ideas that shape how N cares for your child.</h1>
-  <p>A short read on the thinking behind the room — and what it means for you as a parent.</p>
-</div></header>
+
+</header>
+
 
 <main class="wrap">
 
+
 <!-- STORY 1 — BRUNER -->
+
 <section class="panel">
-  <div class="eyebrow">Story One</div>
-  <h2>The Architect of Growth</h2>
-  <p class="for-parent">For the parent who wonders, "How much should I help, and when should I step back?"</p>
 
-  <p>You watch your daughter struggle with a puzzle, her brow furrowed. Part of you wants to take over and show her. But you pause, remembering Jerome Bruner's gentle wisdom.</p>
-
-  <p>Bruner saw you not as a teacher delivering facts, but as a scaffold — the temporary framework surrounding a building under construction. Your role isn't to build the building. It's to provide just enough support so the building can rise on its own.</p>
-
-  <p>Picture it this way: Your daughter tries a piece. It doesn't fit. Instead of placing it correctly for her, you say, "What do you notice about this piece compared to the space?" You're holding the structure steady while she does the work. Then, when she succeeds, you let that level of scaffolding fall away, moving to the next challenge.</p>
-
-  <p>Bruner's insight was that learning is collaborative, a dance between guide and learner. The parent or teacher doesn't do the learning for the child — but without their strategic support at the right moments, the child can't reach the next level. You're there to catch missteps, offer encouragement, and gently push toward new risks.</p>
-
-  <p>The most beautiful part? Your scaffolding is alive — it rises with your child, becomes less visible as they grow stronger, and can always be rebuilt when new challenges arise. One day, your daughter won't need you for that puzzle anymore. But she'll know how to scaffold herself — because you showed her what support feels like.</p>
-
-  <div class="value">
-    <strong>The value Bruner offers you</strong>
-    Permission to be present but not controlling, and a clear vision of how your guidance becomes your child's independence.
+  <div class="eyebrow">
+    Story One
   </div>
 
-  <!-- IMAGE SLOT 1 of 4 -->
+  <h2>
+    The Architect of Growth
+  </h2>
+
+  <p class="for-parent">
+    For the parent who wonders, "How much should I help, and when should I step back?"
+  </p>
+
+  <p>
+    You watch your daughter struggle with a puzzle, her brow furrowed.
+    Part of you wants to take over and show her. But you pause,
+    remembering Jerome Bruner's gentle wisdom.
+  </p>
+
+  <p>
+    Bruner saw you not as a teacher delivering facts, but as a scaffold —
+    the temporary framework surrounding a building under construction.
+    Your role isn't to build the building. It's to provide just enough
+    support so the building can rise on its own.
+  </p>
+
+  <p>
+    Picture it this way: Your daughter tries a piece. It doesn't fit.
+    Instead of placing it correctly for her, you say,
+    "What do you notice about this piece compared to the space?"
+    You're holding the structure steady while she does the work.
+    Then, when she succeeds, you let that level of scaffolding fall away,
+    moving to the next challenge.
+  </p>
+
+  <p>
+    Bruner's insight was that learning is collaborative, a dance between
+    guide and learner. The parent or teacher doesn't do the learning
+    for the child — but without their strategic support at the right
+    moments, the child can't reach the next level. You're there to catch
+    missteps, offer encouragement, and gently push toward new risks.
+  </p>
+
+  <p>
+    The most beautiful part? Your scaffolding is alive — it rises with
+    your child, becomes less visible as they grow stronger, and can always
+    be rebuilt when new challenges arise. One day, your daughter won't
+    need you for that puzzle anymore. But she'll know how to scaffold
+    herself — because you showed her what support feels like.
+  </p>
+
+  <div class="value">
+
+    <strong>
+      The value Bruner offers you
+    </strong>
+
+    Permission to be present but not controlling, and a clear vision
+    of how your guidance becomes your child's independence.
+
+  </div>
+
+  <!-- IMAGE SLOT 1 -->
+
   <figure class="story-photo">
-    <img src="assets/story-bruner.jpg" alt="Photo illustrating Jerome Bruner's scaffolding story" onerror="this.style.display='none'">
-    <div class="placeholder"> 
-    </div>
+
+    <img
+      src="assets/story-bruner.jpg"
+      alt="Photo illustrating Jerome Bruner's scaffolding story"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="placeholder"></div>
+
   </figure>
+
 </section>
+
 
 <!-- STORY 2 — REGGIO EMILIA -->
+
 <section class="panel">
-  <div class="eyebrow">Story Two</div>
-  <h2>The Village of Wonder</h2>
-  <p class="for-parent">For the parent who asks, "How can I truly know what my child is learning, and where do I fit in?"</p>
 
-  <p>Imagine a preschool rising from the rubble of World War II, built literally by parents with their own hands — because they believed their children's futures mattered more than the destruction around them.</p>
-
-  <p>That's how Reggio Emilia began. And from that origin grew a profound truth: parents are not visitors to their children's education — they are partners at the very centre.</p>
-
-  <p>In Reggio-inspired schools, the classroom hums with what educators call "documentation" — teachers carefully observe, photograph, and write about children's words and discoveries. But this isn't just record-keeping. It's a mirror held up to parents, inviting them to see their child's thinking and to share their own observations from home.</p>
-
-  <p>You might look at photos of your child building with blocks and suddenly understand that they're exploring balance and gravity. Or you might notice patterns in their play that even the teacher missed. Through documentation, you become a co-researcher, learning alongside teachers about who your child is and how they think.</p>
-
-  <p>Reggio Emilia tells you that your voice matters at every level — not just at home, but in school governance, curriculum decisions, and community life. You are not receiving an education programme; you are helping to shape one.</p>
-
-  <div class="value">
-    <strong>The value Reggio Emilia offers you</strong>
-    The gift of truly seeing your child's learning, and the invitation to be an empowered leader in their educational journey, not a passive bystander.
+  <div class="eyebrow">
+    Story Two
   </div>
 
+  <h2>
+    The Village of Wonder
+  </h2>
+
+  <p class="for-parent">
+    For the parent who asks, "How can I truly know what my child is learning, and where do I fit in?"
+  </p>
+
+  <p>
+    Imagine a preschool rising from the rubble of World War II,
+    built literally by parents with their own hands — because they
+    believed their children's futures mattered more than the destruction
+    around them.
+  </p>
+
+  <p>
+    That's how Reggio Emilia began. And from that origin grew a profound
+    truth: parents are not visitors to their children's education —
+    they are partners at the very centre.
+  </p>
+
+  <p>
+    In Reggio-inspired schools, the classroom hums with what educators
+    call "documentation" — teachers carefully observe, photograph,
+    and write about children's words and discoveries. But this isn't
+    just record-keeping. It's a mirror held up to parents, inviting
+    them to see their child's thinking and to share their own observations
+    from home.
+  </p>
+
+  <p>
+    You might look at photos of your child building with blocks and
+    suddenly understand that they're exploring balance and gravity.
+    Or you might notice patterns in their play that even the teacher
+    missed. Through documentation, you become a co-researcher, learning
+    alongside teachers about who your child is and how they think.
+  </p>
+
+  <p>
+    Reggio Emilia tells you that your voice matters at every level —
+    not just at home, but in school governance, curriculum decisions,
+    and community life. You are not receiving an education programme;
+    you are helping to shape one.
+  </p>
+
+  <div class="value">
+
+    <strong>
+      The value Reggio Emilia offers you
+    </strong>
+
+    The gift of truly seeing your child's learning, and the invitation
+    to be an empowered leader in their educational journey, not a passive
+    bystander.
+
+  </div>
+
+  <!-- IMAGE SLOT 2 -->
+
   <figure class="story-photo">
-    <img src="assets/story-reggio.jpg" alt="Photo illustrating the Reggio Emilia story" onerror="this.style.display='none'">
-    <div class="placeholder">
-      <strong>
-    </div>
+
+    <img
+      src="assets/story-reggio.jpg"
+      alt="Photo illustrating the Reggio Emilia story"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="placeholder"></div>
+
   </figure>
+
 </section>
+
 
 <!-- STORY 3 — WHITEBREAD -->
+
 <section class="panel">
-  <div class="eyebrow">Story Three</div>
-  <h2>The Laboratory of Play</h2>
-  <p class="for-parent">For the parent who worries, "Shouldn't they be learning something 'real' instead of just playing?"</p>
 
-  <p>You watch your children build a castle with sofa cushions, pretending to be knights. A small part of you wonders if they should be practising letters instead.</p>
-
-  <p>Dr David Whitebread would smile knowingly and invite you to look closer.</p>
-
-  <p>For decades, Whitebread has studied what children are actually doing during play — and the findings are extraordinary. When children pretend, negotiate roles, and create worlds, they are developing what he calls metacognition — thinking about their own thinking. They plan, strategise, troubleshoot, and reflect. These are the very skills that underpin academic success later on.</p>
-
-  <p>In one classic study, children who experienced a "play" condition before a problem-solving task performed better than those who had direct instruction. Play prepared their minds for effort, creativity, and self-regulation.</p>
-
-  <p>But here's Whitebread's gift to you as a parent: the most powerful play is often child-initiated and without adult interference. That doesn't mean you disappear — it means you trust the process. Your role is to provide rich materials, safe environments, and the time and space for play to unfold.</p>
-
-  <p>Whitebread also shows that when you join your child in play — following their lead, not directing it — you're building more than fun memories. You're laying the neurological and emotional groundwork for their self-control and strategic thinking.</p>
-
-  <div class="value">
-    <strong>The value David Whitebread offers you</strong>
-    The freedom to let play be the serious work of childhood, and the reassurance that imagination is not a distraction from learning — it is the engine of it.
+  <div class="eyebrow">
+    Story Three
   </div>
 
-  <!-- IMAGE SLOT 3 of 4 -->
+  <h2>
+    The Laboratory of Play
+  </h2>
+
+  <p class="for-parent">
+    For the parent who worries, "Shouldn't they be learning something 'real' instead of just playing?"
+  </p>
+
+  <p>
+    You watch your children build a castle with sofa cushions,
+    pretending to be knights. A small part of you wonders if they
+    should be practising letters instead.
+  </p>
+
+  <p>
+    Dr David Whitebread would smile knowingly and invite you to look closer.
+  </p>
+
+  <p>
+    For decades, Whitebread has studied what children are actually doing
+    during play — and the findings are extraordinary. When children
+    pretend, negotiate roles, and create worlds, they are developing
+    what he calls metacognition — thinking about their own thinking.
+    They plan, strategise, troubleshoot, and reflect. These are the
+    very skills that underpin academic success later on.
+  </p>
+
+  <p>
+    In one classic study, children who experienced a "play" condition
+    before a problem-solving task performed better than those who had
+    direct instruction. Play prepared their minds for effort, creativity,
+    and self-regulation.
+  </p>
+
+  <p>
+    But here's Whitebread's gift to you as a parent: the most powerful
+    play is often child-initiated and without adult interference.
+    That doesn't mean you disappear — it means you trust the process.
+    Your role is to provide rich materials, safe environments, and
+    the time and space for play to unfold.
+  </p>
+
+  <p>
+    Whitebread also shows that when you join your child in play —
+    following their lead, not directing it — you're building more than
+    fun memories. You're laying the neurological and emotional
+    groundwork for their self-control and strategic thinking.
+  </p>
+
+  <div class="value">
+
+    <strong>
+      The value David Whitebread offers you
+    </strong>
+
+    The freedom to let play be the serious work of childhood,
+    and the reassurance that imagination is not a distraction from
+    learning — it is the engine of it.
+
+  </div>
+
+  <!-- IMAGE SLOT 3 -->
+
   <figure class="story-photo">
-    <img src="assets/story-whitebread.jpg" alt="Photo illustrating the David Whitebread story" onerror="this.style.display='none'">
-    <div class="placeholder">
-      
-    </div>
+
+    <img
+      src="assets/story-whitebread.jpg"
+      alt="Photo illustrating the David Whitebread story"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="placeholder"></div>
+
   </figure>
+
 </section>
+
 
 <!-- FINAL STORY — SHARED FOUNDATION -->
+
 <section class="panel unified">
-  <div class="eyebrow" style="color:var(--honey)">The Final Story</div>
-  <h2>A Shared Foundation</h2>
-  <p class="for-parent" style="color:#e7ede9">For the parent who sees the bigger picture.</p>
 
-  <p>Standing apart, these three thinkers seem to offer different gifts: the scaffold, the village, the playground.</p>
+  <div
+    class="eyebrow"
+    style="color:var(--honey)"
+  >
+    The Final Story
+  </div>
 
-  <p>But step back, and you'll see they were all describing the same beautiful truth.</p>
+  <h2>
+    A Shared Foundation
+  </h2>
 
-  <p>Jerome Bruner showed that learning is relational. It happens in the space between guide and learner. He gave you the language to understand your role as a temporary support, fading as confidence grows.</p>
+  <p
+    class="for-parent"
+    style="color:#e7ede9"
+  >
+    For the parent who sees the bigger picture.
+  </p>
 
-  <p>The educators of Reggio Emilia showed that learning is communal. It doesn't happen in isolation — it requires parents, teachers, and children in a circle of shared observation and wonder. They gave you the tools to be a partner, not a customer.</p>
+  <p>
+    Standing apart, these three thinkers seem to offer different gifts:
+    the scaffold, the village, the playground.
+  </p>
 
-  <p>David Whitebread showed that learning is active and self-directed. Children are not empty vessels waiting to be filled — they are scientists, artists, and architects of their own understanding. Play is their primary method, and your trust is their fuel.</p>
+  <p>
+    But step back, and you'll see they were all describing the same
+    beautiful truth.
+  </p>
 
-  <div class="pull" style="background:rgba(255,255,255,.08);color:#fff">When you take Bruner's scaffold, Reggio's village, and Whitebread's playground, you get a parenting vision that is whole.</div>
+  <p>
+    Jerome Bruner showed that learning is relational. It happens in
+    the space between guide and learner. He gave you the language to
+    understand your role as a temporary support, fading as confidence grows.
+  </p>
 
-  <p>It says: you are the scaffold that holds up your child's building, but you are also part of a village where everyone — teachers, family, community — shares in the work. And at the centre of it all is a child, playing, questioning, constructing meaning with their whole being.</p>
+  <p>
+    The educators of Reggio Emilia showed that learning is communal.
+    It doesn't happen in isolation — it requires parents, teachers,
+    and children in a circle of shared observation and wonder. They
+    gave you the tools to be a partner, not a customer.
+  </p>
 
-  <p>These three visions overlap in one profound message: children learn best when they are guided but free, observed but trusted, challenged but safe. And parents are not just enablers of this magic — they are essential to it.</p>
+  <p>
+    David Whitebread showed that learning is active and self-directed.
+    Children are not empty vessels waiting to be filled — they are
+    scientists, artists, and architects of their own understanding.
+    Play is their primary method, and your trust is their fuel.
+  </p>
 
-  <p>You don't have to choose between being a teacher, a partner, or a playmate. You get to be all three. And so does your child.</p>
+  <div
+    class="pull"
+    style="background:rgba(255,255,255,.08);color:#fff"
+  >
+    When you take Bruner's scaffold, Reggio's village, and Whitebread's
+    playground, you get a parenting vision that is whole.
+  </div>
 
-  <!-- IMAGE SLOT 4 of 4 — the "unified" image -->
+  <p>
+    It says: you are the scaffold that holds up your child's building,
+    but you are also part of a village where everyone — teachers, family,
+    community — shares in the work. And at the centre of it all is a
+    child, playing, questioning, constructing meaning with their whole being.
+  </p>
+
+  <p>
+    These three visions overlap in one profound message: children learn
+    best when they are guided but free, observed but trusted, challenged
+    but safe. And parents are not just enablers of this magic — they are
+    essential to it.
+  </p>
+
+  <p>
+    You don't have to choose between being a teacher, a partner,
+    or a playmate. You get to be all three. And so does your child.
+  </p>
+
+  <!-- IMAGE SLOT 4 -->
+
   <figure class="story-photo">
-    <img src="assets/story-unifed.jpg" alt="Unified image bringing together Bruner, Reggio Emilia and Whitebread" onerror="this.style.display='none'">
-    <div class="placeholder">
-       <img src="assets/story-unified.jpg
-    </div>
+
+    <img
+      src="assets/story-unified.jpg"
+      alt="Unified image bringing together Bruner, Reggio Emilia and Whitebread"
+      onerror="this.style.display='none'"
+    >
+
+    <div class="placeholder"></div>
+
   </figure>
+
 </section>
+
 
 </main>
 
-<footer>N Family Club — Stories for Parents. Adapted for N London Fields.</footer>
 
-</body></html>
+<footer>
+  N Family Club — Stories for Parents. Adapted for N London Fields.
+</footer>
+
+</body>
+</html>
